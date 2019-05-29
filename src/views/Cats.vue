@@ -15,9 +15,12 @@ import { mapState } from 'vuex'
 
 export default {
   data () {
-    return {
-      cats
-    }
+    return {}
+  },
+  computed: {
+    ...mapState([
+      'cats'
+    ])
   }
 }
 </script>
