@@ -1,14 +1,22 @@
 <template>
   <div class="">
-    <b-table striped hover :items="items"></b-table>
+    {{ $route.params.species}}
+    {{ $route.params. }}
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data () {
-    return {
-    }
+    return {}
+  },
+  computed: {
+    ...mapState([
+      'cats',
+      'dogs'
+    ])
   }
 }
 </script>
