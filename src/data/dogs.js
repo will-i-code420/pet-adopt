@@ -43,7 +43,7 @@ export default [
     name: 'Gidget',
     breed: 'boston terrier',
     gender: 'female',
-    age: .6,
+    age: 0.6,
     color: 'white w/red splashes',
     weight: 18,
     location: 'Cage #25',

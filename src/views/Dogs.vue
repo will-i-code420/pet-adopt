@@ -8,7 +8,7 @@
 import dogs from '@/data/dogs'
 
 export default {
-  data() {
+  data () {
     return {
       dogs
     }
