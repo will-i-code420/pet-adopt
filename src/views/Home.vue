@@ -58,14 +58,14 @@ export default {
     }
   },
   computed: {
-    ...mapGetters ([
+    ...mapGetters([
       'animalsCount',
       'getAllCats',
       'getAllDogs'
     ])
   },
   methods: {
-    ...mapActions ([
+    ...mapActions([
       'addPet'
     ]),
     togglePetForm () {
