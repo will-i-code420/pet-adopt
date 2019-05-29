@@ -2,6 +2,7 @@ export default [
   {
     name: 'Elwood',
     breed: 'airdale',
+    species: 'dog',
     gender: 'male',
     age: 5,
     color: 'brown/black',
@@ -12,6 +13,7 @@ export default [
   {
     name: 'Bebe',
     breed: 'boston terrier',
+    species: 'dog',
     gender: 'female',
     age: 15,
     color: 'black/white',
@@ -22,6 +24,7 @@ export default [
   {
     name: 'Lolita',
     breed: 'pitbull',
+    species: 'dog',
     gender: 'female',
     age: 4,
     color: 'light gold',
@@ -32,6 +35,7 @@ export default [
   {
     name: 'Titan',
     breed: 'great dane',
+    species: 'dog',
     gender: 'male',
     age: 7,
     color: 'gray w/ black spots',
@@ -42,6 +46,7 @@ export default [
   {
     name: 'Gidget',
     breed: 'boston terrier',
+    species: 'dog',
     gender: 'female',
     age: 0.6,
     color: 'white w/red splashes',
@@ -52,6 +57,7 @@ export default [
   {
     name: 'Luna',
     breed: 'golden lab',
+    species: 'dog',
     gender: 'female',
     age: 1,
     color: 'gold',

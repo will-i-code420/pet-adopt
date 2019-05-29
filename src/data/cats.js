@@ -2,6 +2,7 @@ export default [
   {
     name: 'Zeus',
     breed: 'calico',
+    species: 'cat',
     gender: 'female',
     age: 4,
     color: 'red/orange',
@@ -12,6 +13,7 @@ export default [
   {
     name: 'Noodles',
     breed: 'unknown',
+    species: 'cat',
     gender: 'male',
     age: 6,
     color: 'black/white',
@@ -22,6 +24,7 @@ export default [
   {
     name: 'Garfield',
     breed: 'tabby',
+    species: 'cat',
     gender: 'male',
     age: 8,
     color: 'orange w/ black spots',
@@ -32,6 +35,7 @@ export default [
   {
     name: 'Chedder',
     breed: 'tabby',
+    species: 'cat',
     gender: 'female',
     age: 2,
     color: 'white',
@@ -42,6 +46,7 @@ export default [
   {
     name: 'Tina',
     breed: 'egyption',
+    species: 'cat',
     gender: 'female',
     age: 1,
     color: 'white, no fur',
@@ -52,6 +57,7 @@ export default [
   {
     name: 'Chester',
     breed: 'unknown',
+    species: 'cat',
     gender: 'male',
     age: 9,
     color: 'black',

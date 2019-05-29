@@ -2,6 +2,10 @@
   <div class="home">
     <h1>Find Your New Best Friend Today!</h1>
 
+    {{ getAllCats.length }}
+
+    {{ getAllDogs.length }}
+
     {{ animalsCount }}
 
     <button @click="togglePetForm" class="btn btn-primary">Add New Pet</button>
@@ -55,7 +59,9 @@ export default {
   },
   computed: {
     ...mapGetters ([
-      'animalsCount'
+      'animalsCount',
+      'getAllCats',
+      'getAllDogs'
     ])
   },
   methods: {
