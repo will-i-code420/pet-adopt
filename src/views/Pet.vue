@@ -1,7 +1,6 @@
 <template>
   <div class="">
-    {{ $route.params.species}}
-    {{ $route.params. }}
+    {{ pet().name }}
   </div>
 </template>
 
@@ -17,6 +16,12 @@ export default {
       'cats',
       'dogs'
     ])
+  },
+  methods: {
+    pet () {
+      const animal = this[this.$route.params.species][this.$route.params.id]
+      return animal
+    }
   }
 }
 </script>
