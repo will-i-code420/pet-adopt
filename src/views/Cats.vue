@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <PetTable
-    species="cats"
+    species="Cats"
     :pets="cats"
     />
   </div>
