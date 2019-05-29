@@ -54,6 +54,7 @@
         <b-form-input
           id="input-4"
           v-model="formData.age"
+          type="number"
           required
           placeholder="Enter Age"
         >
@@ -64,6 +65,7 @@
         <b-form-input
           id="input-5"
           v-model="formData.weight"
+          type="number"
           required
           placeholder="Enter Weight in LBS"
         >
@@ -85,7 +87,7 @@
           id="input-7"
           v-model="formData.location"
           required
-          placeholder="Current Pet Location"
+          placeholder="Current Pet Location (City, State, Zip)"
         >
         </b-form-input>
       </b-form-group>
@@ -100,7 +102,7 @@
         </b-form-input>
       </b-form-group>
 
-      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="submit" variant="primary" :disabled="!formComplete">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
   </div>
@@ -115,11 +117,11 @@ export default {
       showPetForm: false,
       formData: {
         name: '',
-        age: 0,
+        age: '',
         species: null,
         breed: '',
         gender: '',
-        weight: 0,
+        weight: '',
         color: '',
         notes: '',
         location: ''
@@ -131,7 +133,10 @@ export default {
       'animalsCount',
       'getAllCats',
       'getAllDogs'
-    ])
+    ]),
+    formComplete () {
+      return this.formData
+    }
   },
   methods: {
     ...mapActions([
@@ -159,11 +164,11 @@ export default {
       this.addPet(payload)
       this.formData = {
         name: '',
-        age: 0,
+        age: '',
         species: null,
         breed: '',
         gender: '',
-        weight: 0,
+        weight: '',
         color: '',
         notes: '',
         location: ''
