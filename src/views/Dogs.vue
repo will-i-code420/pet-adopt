@@ -1,5 +1,6 @@
 <template>
   <div class="">
+    <h1>Dogs Looking For A New Home</h1>
     <b-table striped hover :items="dogs"></b-table>
   </div>
 </template>

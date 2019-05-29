@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <h1>Find Your New Best Friend Today!</h1>
   </div>
 </template>
 
@@ -8,7 +9,7 @@
 export default {
   name: 'home',
   components: {
-    
+
   }
 }
 </script>
