@@ -1,6 +1,12 @@
 <template>
   <div class="">
-    {{ pet().name }}
+    <h1>{{ animal.name }} ($route.params.species)</h1>
+    <p>Age: {{ animal.age }} years old</p>
+    <p>Weight: {{ animal.weight }} lbs</p>
+    <p>Breed: {{ animal.breed }}</p>
+    <p>{{ animal.gender }}</p>
+    <p>Color: {{ animal.color }}</p>
+    <p>About: {{ animal.notes }}</p>
   </div>
 </template>
 
@@ -9,7 +15,9 @@ import { mapState } from 'vuex'
 
 export default {
   data () {
-    return {}
+    return {
+      animal: {}
+    }
   },
   computed: {
     ...mapState([
@@ -17,11 +25,9 @@ export default {
       'dogs'
     ])
   },
-  methods: {
-    pet () {
-      const animal = this[this.$route.params.species][this.$route.params.id]
-      return animal
-    }
+  mounted () {
+    const animal = this[this.$route.params.species][this.$route.params.id]
+    this.animal = animal
   }
 }
 </script>
