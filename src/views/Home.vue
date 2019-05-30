@@ -25,7 +25,7 @@
           id="input-2"
           v-model="formData.species"
           :value="null"
-          :options="['cats', 'dogs']"
+          :options="['Cats', 'Dogs']"
           required
         >
         </b-form-select>
@@ -42,15 +42,14 @@
       </b-form-group>
 
       <b-form-group label="Gender:">
-        <b-form-radio v-model="formData.gender" name="gender" value="M">
-          Male
-        </b-form-radio>
-        <b-form-radio v-model="formData.gender" name="gender" value="F">
-          Female
-        </b-form-radio>
-        <b-form-radio v-model="formData.gender" name="gender" value="O">
-          Other (Use Special Info)
-        </b-form-radio>
+        <b-form-radio-group
+          v-model="formData.gender"
+          :options="options"
+          buttons
+          button-variant="outline-primary"
+          name="gender"
+          >
+        </b-form-radio-group>
       </b-form-group>
 
       <b-form-group id="input-group-4" label="Pet's Age:" label-for="input-4">
@@ -70,7 +69,7 @@
           v-model="formData.weight"
           type="number"
           required
-          placeholder="Enter Weight in LBS"
+          placeholder="Enter Weight(LBS)"
         >
         </b-form-input>
       </b-form-group>
@@ -90,7 +89,7 @@
           id="input-7"
           v-model="formData.location"
           required
-          placeholder="Current Pet Location (City, State, Zip)"
+          placeholder="(City, State, Zip)"
         >
         </b-form-input>
       </b-form-group>
@@ -128,7 +127,12 @@ export default {
         color: '',
         notes: '',
         location: ''
-      }
+      },
+      options: [
+        { text: 'Male', value: 'male' },
+        { text: 'Female', value: 'female' },
+        { text: 'Other (Use Special Notes)', value: 'other *see notes' }
+      ]
     }
   },
   computed: {
