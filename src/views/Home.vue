@@ -24,6 +24,7 @@
         <b-form-select
           id="input-2"
           v-model="formData.species"
+          :value="null"
           :options="['cats', 'dogs']"
           required
         >
@@ -40,14 +41,16 @@
         </b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-9" label="Gender:" label-for="input-9">
-        <b-form-input
-          id="input-9"
-          v-model="formData.gender"
-          required
-          placeholder="Enter Gender"
-        >
-        </b-form-input>
+      <b-form-group label="Gender:">
+        <b-form-radio v-model="formData.gender" name="gender" value="M">
+          Male
+        </b-form-radio>
+        <b-form-radio v-model="formData.gender" name="gender" value="F">
+          Female
+        </b-form-radio>
+        <b-form-radio v-model="formData.gender" name="gender" value="O">
+          Other (Use Special Info)
+        </b-form-radio>
       </b-form-group>
 
       <b-form-group id="input-group-4" label="Pet's Age:" label-for="input-4">
