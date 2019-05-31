@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <b-navbar toggleable="lg" type="dark" variant="info" top>
+      <b-navbar toggleable="lg" type="dark" variant="info" fixed="top">
         <b-navbar-brand to="/">LOGO</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
@@ -31,6 +31,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-top: 20px;
 }
 #nav {
   padding: 20px;
