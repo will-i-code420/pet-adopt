@@ -4,9 +4,10 @@
     <p>Age: {{ animal.age }} years old</p>
     <p>Weight: {{ animal.weight }} lbs</p>
     <p>Breed: {{ animal.breed }}</p>
-    <p>{{ animal.gender }}</p>
+    <p>Gender: {{ animal.gender }}</p>
     <p>Color: {{ animal.color }}</p>
     <p>About: {{ animal.notes }}</p>
+    <p>Location: {{ animal.location }}</p>
   </div>
 </template>
 
@@ -25,9 +26,9 @@ export default {
       'dogs'
     ])
   },
-  mounted () {
-    const animal = this[this.$route.params.species][this.$route.params.id]
-    this.animal = animal
+  created () {
+    const species = this[this.$route.params.species][this.$route.params.id]
+    this.animal = species
   }
 }
 </script>
