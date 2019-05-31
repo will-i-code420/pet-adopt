@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="cat-container">
     <PetTable
     species="Cats"
     :pets="cats"

@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="petTable-container">
     <h1>{{ species }} Looking For A New Home</h1>
     <b-table striped hover :items="pets">
       <template slot="name" slot-scope="data">

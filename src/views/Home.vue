@@ -1,12 +1,12 @@
 <template>
   <div class="home-container">
     <h1>Find Your New Best Friend Today!</h1>
-
-    {{ getAllCats.length }}
-
-    {{ getAllDogs.length }}
-
-    {{ animalsCount }}
+    <br>
+    <p>We currently have <strong>{{ animalsCount }}</strong> pets looking for a new home</p>
+    <br>
+    <p>There are <strong>{{ getAllCats.length }}</strong> cats</p>
+    <br>
+    <p>There are <strong>{{ getAllDogs.length }}</strong> dogs</p>
 
     <button @click="togglePetForm" class="btn btn-primary">Add New Pet</button>
     <b-form @submit.prevent="submitPet" v-if="showPetForm">

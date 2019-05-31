@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="pet-container">
     <h1>{{ animal.name }} ({{ $route.params.species }})</h1>
     <p>Age: {{ animal.age }} years old</p>
     <p>Weight: {{ animal.weight }} lbs</p>
