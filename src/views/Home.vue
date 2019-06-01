@@ -107,6 +107,23 @@
       <b-button type="submit" variant="primary" :disabled="!formComplete">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
+    <v-container grid-list-xl>
+	     <image-input v-model="avatar">
+	        <div slot="activator">
+	           <v-avatar size="150px" v-ripple v-if="!avatar" class="grey lighten-3 mb-3">
+               <span>Click to add avatar</span>
+	            </v-avatar>
+	             <v-avatar size="150px" v-ripple v-else class="mb-3">
+                 <img :src="avatar.imageURL" alt="avatar">
+	              </v-avatar>
+	          </div>
+	      </image-input>
+	       <v-slide-x-transition>
+	          <div v-if="avatar && saved == false">
+	             <v-btn class="primary" @click="uploadImage" :loading="saving">Save Avatar</v-btn>
+	          </div>
+	       </v-slide-x-transition>
+	    </v-container>
   </div>
 </template>
 
