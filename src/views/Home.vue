@@ -111,7 +111,7 @@
 	     <image-uploader v-model="avatar">
 	        <div slot="imageActivator">
 	           <v-avatar size="150px" v-ripple v-if="!avatar" class="grey lighten-3 mb-3">
-               <span>Click to add avatar</span>
+               <span>Add Pet Photo</span>
 	            </v-avatar>
 	             <v-avatar size="150px" v-ripple v-else class="mb-3">
                  <img :src="avatar.imageURL" alt="avatar">
@@ -120,7 +120,7 @@
 	      </image-uploader>
 	       <v-slide-x-transition>
 	          <div v-if="avatar && saved == false">
-	             <v-btn class="primary" @click="uploadImage" :loading="saving">Save Avatar</v-btn>
+	             <v-btn class="primary" @click="uploadImage" :loading="saving">Save Photo</v-btn>
 	          </div>
 	       </v-slide-x-transition>
 	    </v-container>
