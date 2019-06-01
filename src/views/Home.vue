@@ -129,6 +129,8 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import ImageUploader from './components/ImageUploader.vue'
+
 export default {
   name: 'home',
   data () {
@@ -149,8 +151,14 @@ export default {
         { text: 'Male', value: 'male' },
         { text: 'Female', value: 'female' },
         { text: 'Other (Use Special Notes)', value: 'other *see notes' }
-      ]
+      ],
+        avatar: null,
+	      saving: false,
+	      saved: false
     }
+  },
+  components: {
+    ImageUploader: ImageUploader
   },
   computed: {
     ...mapGetters([
@@ -160,6 +168,14 @@ export default {
     ]),
     formComplete () {
       return this.formData
+    }
+  },
+  watch: {
+    avatar: {
+      handler: function () {
+        this.saved = false
+      },
+      deep: true
     }
   },
   methods: {
@@ -197,8 +213,15 @@ export default {
         notes: '',
         location: ''
       }
+    },
+    uploadImage () {
+      this.saving = true
+      setTimeout(() => this.savedAvatar(), 1000)
+    },
+    savedAvatar () {
+      this.saving = false
+      this.saved = true
     }
-  },
-  watchers: {}
+  }
 }
 </script>
