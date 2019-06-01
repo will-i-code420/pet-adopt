@@ -10,7 +10,7 @@
     <p>Location: {{ animal.location }}</p>
     <br>
     <br>
-    <p>If you're interested in brining me home fill out the form below and we'll be in touch within 24 hours</p>
+    <p>If you're interested in brining {{ animal.name }} home fill out the form below and we'll be in touch within 24 hours</p>
     <button @click="toggleAdoptInfo" class="btn btn-primary">I'm Interested</button>
     <b-form @submit.prevent="submitAdoptInfo" v-if="showAdoptForm">
       <b-form-group id="input-group-10" label="Name:" label-for="input-10">
