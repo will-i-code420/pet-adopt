@@ -2,7 +2,9 @@
   <div class="imageUploader">
     <div @click="launchFilePicker()">
       <slot name="imageActivator"></slot>
-      <input type="file" ref="file"
+    </div>
+      <input type="file"
+      ref="file"
       :name="uploadFieldName"
       @change="onFileChange($event.target.name, $event.target.files)"
       style="display:none"
@@ -10,7 +12,7 @@
       <v-dialog v-model="errorDialog" max-width="300">
         <v-card>
           <v-card-text class="subheading">
-            {{errorText}}
+            {{ errorText }}
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
@@ -20,14 +22,13 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
-    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'image-input',
-  data: ()=> ({
+  name: 'image-uploader',
+  data: () => ({
     errorDialog: null,
     errorText: '',
     uploadFieldName: 'file',
@@ -43,9 +44,9 @@ export default {
     onFileChange (fieldName, file) {
       const { maxSize } = this
       let imageFile = file[0]
+
       if (file.length > 0) {
-        let size = imageFile.size
-      }
+        let size = imageFile.size / maxSize / maxSize
       if (!imageFile.type.match('image.*')) {
         this.errorDialog = true
         this.errorText = 'Please choose an image file'
@@ -56,10 +57,11 @@ export default {
         let formData = new FormData()
         let imageURL = URL.createObjectURL(imageFile)
         formData.append(fieldName, imageFile)
+        this.$emit('input', { formData, imageURL })
+        }
       }
-      this.$emit('input', { formData, imageURL })
     }
-  },
+  }
 }
 </script>
 

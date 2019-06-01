@@ -108,8 +108,8 @@
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
     <v-container grid-list-xl>
-	     <image-input v-model="avatar">
-	        <div slot="activator">
+	     <image-uploader v-model="avatar">
+	        <div slot="imageActivator">
 	           <v-avatar size="150px" v-ripple v-if="!avatar" class="grey lighten-3 mb-3">
                <span>Click to add avatar</span>
 	            </v-avatar>
@@ -117,7 +117,7 @@
                  <img :src="avatar.imageURL" alt="avatar">
 	              </v-avatar>
 	          </div>
-	      </image-input>
+	      </image-uploader>
 	       <v-slide-x-transition>
 	          <div v-if="avatar && saved == false">
 	             <v-btn class="primary" @click="uploadImage" :loading="saving">Save Avatar</v-btn>
@@ -129,7 +129,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import ImageUploader from './components/ImageUploader.vue'
+import ImageUploader from '@/components/ImageUploader.vue'
 
 export default {
   name: 'home',
